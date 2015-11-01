@@ -8,7 +8,7 @@ public class Bal {
     private double y;
 
     private double vy;
-    private int t;
+    private double t;
 
     private Color kleur; // Kleur van de bal
     private final double VALVERSNELLING = 9.81; // Natuurkundige constante
@@ -21,7 +21,7 @@ public class Bal {
     /**
      * Zet de startwaarden
      */
-    private void reset() {
+    public void reset() {
         this.t = 0;
         this.x = 10;
         this.y = 0;
@@ -31,11 +31,11 @@ public class Bal {
     /**
      * @param dt in msec
      */
-    public void adjust(int dt) {
+    public void adjust(double dt) {
         this.t = this.t + dt;
-        // Valbeweging formule over de afgelegde weg .. zie een basis natuurkunde boek.
-        this.y = (VALVERSNELLING / 2) * this.t * this.t / 1000000;
-        this.vy = (VALVERSNELLING * t) / 1000;
+        // valbeweging formule over de afgelegde weg .. zie een basis natuurkunde boek.
+        y = (VALVERSNELLING / 2) * this.t * this.t / 1000000; // t in msec
+        vy = VALVERSNELLING * this.t / 1000;
     }
 
 
@@ -44,7 +44,7 @@ public class Bal {
      * @return x positie bal
      */
     public double getX() {
-        return x;
+        return (x);
     }
 
     /**
@@ -52,7 +52,7 @@ public class Bal {
      * @return y positie bal
      */
     public double getY() {
-        return y;
+        return (y);
     }
 
     /**
@@ -60,15 +60,15 @@ public class Bal {
      * @return vy snelheid van de bal in meter/sec
      */
     public double getVy() {
-        return vy;
+        return (vy);
     }
 
     /**
      *
      * @return t versterken tijd in msec
      */
-    public int getT() {
-        return t;
+    public double getT() {
+        return this.t;
     }
 
     /**
