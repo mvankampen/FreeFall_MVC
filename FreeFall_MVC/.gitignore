@@ -1,9 +1,0 @@
-*.iml
-/.idea/*
-/out/*
-/bin/
-.project
-.classpath
-/.settings/
-/doc/
-META-INF/
